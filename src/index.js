@@ -95,3 +95,42 @@ const wrapCurried = (type) => (str) => `<${type}>${str}</${type}>`;
 const transformCurried = pipe(trim, toLowerCase, wrapCurried("div"));
 
 console.log(transformCurried(input)); // <div>javascript</div>
+
+// Pure functions are functions that do not have side effects and always return the same output for the same input. They do not modify any external state or rely on it. This makes them easier to reason about and test.
+
+// no randomness, no external state, no side effects
+// no current time, no current date, no current user, no current environment, no current state
+// no global variables, no global state, no global functions
+// no current configuration, no current settings, no current preferences
+// no mutation of parameters
+
+// bbenifits of pure functions:
+// 1. Easier to test: Pure functions are easier to test because they do not rely on external state or have side effects.
+// 2. Easier to reason about: Pure functions are easier to reason about because they always return the same output for the same input.
+// 3. Easier to compose: Pure functions can be easily composed together to create more complex functions.
+
+// Immtabblity 
+
+// In a pure functional programming language data can not mutate, but in javascript we can mutate objects and arrays but string can not mutate. 
+// So javascript is not a pure functional programming language. But we can use immutability libraries like Immutable.js or Immer.js to achieve immutability in JavaScript.
+
+// Pros of immutability:
+// 1. Easier to reason about: Immutable data structures are easier to reason about because they do not change over time.
+// 2. Easier to test: Immutable data structures are easier to test because they do not rely on external state or have side effects.
+// 3. Easier to debug: Immutable data structures are easier to debug because they do not change over time.
+// 4. Easier to optimize: Immutable data structures can be optimized by the JavaScript engine because they do not change over time.
+// 5. Easier to share: Immutable data structures can be shared between different parts of the application without worrying about side effects.
+// 6. Easier to cache: Immutable data structures can be cached because they do not change over time.
+// 7. Easier to parallelize: Immutable data structures can be parallelized because they do not change over time.
+// 8. Easier to memoize: Immutable data structures can be memoized because they do not change over time.
+// 9. Easier to serialize: Immutable data structures can be serialized because they do not change over time.
+// 10. Easier to clone: Immutable data structures can be cloned because they do not change over time.
+
+
+// Cons of immutability:
+// 1. Performance: Immutable data structures can be slower than mutable data structures because they require copying the entire data structure to create a new one.
+// 2. Memory: Immutable data structures can use more memory than mutable data structures because they require copying the entire data structure to create a new one.
+// 3. Complexity: Immutable data structures can be more complex to work with because they require creating new data structures instead of modifying existing ones.
+
+// in redux we use immutability to avoid side effects and make the state predictable.
+
