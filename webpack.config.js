@@ -1,14 +1,32 @@
-const path = require("path");
+// webpack.config.js
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  mode: 'development',
+  entry: './src/index.js',
   output: {
-    filename: "app.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    clean: true, // Clean output dir in Webpack 5
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    port: 9000
+    static: './dist',
+    port: 9000,
+    hot: true,
   },
-  mode: "development"
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    })
+  ]
 };
