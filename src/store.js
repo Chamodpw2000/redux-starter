@@ -1,7 +1,8 @@
-import { configStore } from "redux";
+
+import { configureStore } from "@reduxjs/toolkit";
 import reducer from "./reducer";
 
-const store = configStore({
+const store = configureStore({
     reducer
 });
 
