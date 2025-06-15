@@ -1,4 +1,4 @@
-import reducer from "./reducer";
+import reducer from "../reducer";
 
 function CreateStore(reducer){
     let state;

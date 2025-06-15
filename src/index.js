@@ -4,6 +4,9 @@
 // console.log("Store is", store);
 // console.log("Store state is", store.getState());
 
+import configureStore from "./store/coniureStore";
+import * as actions from "./store/bugs";
+const store = configureStore();
 // const unsubscribe = store.subscribe(()=>{
 //     console.log("Store state changed", store.getState());
 // })
@@ -51,7 +54,7 @@
 
 // console.log("Store state after resolving a bug is", store.getState());
 
-import store from "./customStore";
+
 
 // store.state=1;
 
@@ -59,7 +62,6 @@ import store from "./customStore";
 // console.log(store);
 
 
-import * as actions from './actions';
 
 store.subscribe(()=>{
     console.log("store changed");
@@ -68,7 +70,9 @@ store.subscribe(()=>{
 
 
 
-store.dispatcher(actions.bugAdded("Bug 1"));
+store.dispatch(actions.bugAdded("Bug 1"));
+store.dispatch(actions.bugAdded('Bug 3'));
+store.dispatch(actions.bugResolved(1));
 
 console.log(store.getState());
 
